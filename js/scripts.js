@@ -1,21 +1,22 @@
-$(document).ready(function(){
- $('#form').submit(function(event){
-    event.preventDefault();
+$(document).ready(function() {
+ $('#form').submit(function(event) {
     var inputString = $("#string1").val();
     var vowels = ["a","e","i","o","u"];
     var newString = ""; //new array to hold stings temporarily
-    var index = 0;
     var stringCharacter = inputString.split("");
     for (var index=0; index < inputString.length; index += 1) {
+      alert("Split string: " + stringCharacter + " | Split char: " + stringCharacter[index] + " | stringCharacterLength: " + stringCharacter.length);
 //      var stringCharacter = inputString[index];
-      alert("value of stringCharacter: " + stringCharacter);
-      if (vowels.indexOf(inputString) > 1) {
+      // alert("Value of index is: " + index);
+      // alert("Value of inputString-length: " + inputString.length);
+      // alert("value of stringCharacter: " + stringCharacter);
+      if (vowels.indexOf(stringCharacter) > -1) {
         newString = newString + "-";
-        alert("value of indexOf: " + vowels.indexOf(stringCharacter));
+        alert("If-alert");
       } else {
         newString = newString+stringCharacter[index];
-        alert("Else-newString value: " + newString);
       }
     }
+    event.preventDefault();
   });
 });
